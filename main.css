@@ -8,8 +8,13 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #101010; /* ダークグレー */
-  color: #f0f0f0; /* 文字色を明るい灰色 */
+  background-color: #e0e0e0; /* 明るい背景 */
+  color: #212121; /* 黒 */
+}
+
+/* 明朝体フォントの設定 */
+h1, h2, h3, .top-section h1 {
+  font-family: 'Noto Serif', serif; /* 明朝体 */
 }
 
 /* コンテナ設定 */
@@ -18,19 +23,26 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  margin-top: 80px; /* ナビゲーションバー分の隙間を作る */
 }
 
 /* ナビゲーションバー */
 .nav {
-  background-color: #121212; /* より深い黒色 */
-  color: #00bcd4; /* 明るい青緑色 */
-  padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: #f0f0f0; /* 明るい背景 */
+  color: #333333; /* 濃い文字 */
+  padding: 15px 30px;
+  position: fixed; /* 固定表示 */
+  top: 0; /* 上部に固定 */
+  left: 0; /* 左側に固定 */
+  width: 100%; /* 幅を画面いっぱいに */
+  z-index: 1000; /* 他の要素より前面に表示 */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.7); /* 明確な影 */
+  border-radius: 10px;
 }
 
 .nav ul {
   display: flex;
-  justify-content: center; /* センター揃え */
+  justify-content: flex-start;
   list-style: none;
 }
 
@@ -39,75 +51,77 @@ body {
 }
 
 .nav a {
-  color: #00bcd4;
+  color: #333333;
   text-decoration: none;
-  font-size: 1.3em;
-  padding: 10px 20px;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 5px;
+  font-size: 1.4em;
+  padding: 10px 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
 }
 
 .nav a:hover {
-  background-color: #333333;
-  color: white;
+  transform: scale(1.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.7); /* ホバー時の影を強調 */
 }
 
 /* トップセクション */
 .top-section {
-  background-color: #1a1a1a; /* ダークグレー */
-  color: white;
+  background-color: #f0f0f0; /* 明るい背景 */
+  color: #212121; /* 黒 */
   text-align: center;
   padding: 120px 20px;
-  border-bottom: 4px solid #00bcd4; /* 青緑の下線 */
+  border-radius: 20px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2), -15px -15px 40px rgba(255, 255, 255, 0.7); /* 明確で深い影 */
+  margin-bottom: 40px;
 }
 
 .top-section h1 {
-  font-size: 3.5em;
+  font-size: 4.5em;
   margin-bottom: 20px;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+  color: #2196f3; /* 青色 */
 }
 
 .top-section p {
   font-size: 1.4em;
   margin-bottom: 40px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .top-section .btn {
-  background-color: #00bcd4;
-  color: white;
+  background-color: #2196f3; /* 青色 */
+  color: #f0f0f0; /* 明るい灰色 */
   padding: 12px 40px;
   font-size: 1.3em;
   text-decoration: none;
-  border-radius: 30px;
-  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 50px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3), -5px -5px 25px rgba(255, 255, 255, 0.6); /* 深い影 */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .top-section .btn:hover {
-  background-color: #0097a7;
   transform: scale(1.05);
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.35), -8px -8px 30px rgba(255, 255, 255, 0.7); /* ホバー時の深い影 */
 }
 
 /* セクション設定 */
 section {
   padding: 60px 20px;
   margin-top: 50px;
-  background-color: #1c1c1c; /* ダークグレー */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  background-color: #f0f0f0; /* 明るい背景 */
+  border-radius: 20px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2), -15px -15px 40px rgba(255, 255, 255, 0.7); /* 深い影 */
 }
 
 h2, h3 {
-  color: #00bcd4; /* 明るい青緑色 */
+  font-size: 2.5em; /* h2を大きく */
   margin-bottom: 25px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  color: #2196f3; /* 青色 */
 }
 
 p {
   font-size: 1.1em;
   margin-bottom: 25px;
   line-height: 1.8;
-  color: #e0e0e0; /* 明るい灰色 */
+  color: #212121; /* 黒 */
 }
 
 /* 画像ギャラリー */
@@ -119,17 +133,41 @@ p {
 }
 
 .img-2col-container img {
-  width: 48%; /* 幅を48%に変更して余白を確保 */
+  width: 48%;
   height: auto;
-  border-radius: 15px;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.25), -10px -10px 25px rgba(255, 255, 255, 0.7); /* 深い影 */
 }
 
 .img-2col-container img:hover {
-  transform: scale(1.05); /* 画像にホバー時の拡大効果 */
+  transform: scale(1.05);
+  box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.3), -12px -12px 35px rgba(255, 255, 255, 0.8); /* ホバー時の深い影 */
 }
 
 /* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+  .nav ul {
+    justify-content: center;
+  }
+
+  .img-2col-container img {
+    width: 48%;
+  }
+
+  .top-section h1 {
+    font-size: 2.8em;
+  }
+
+  .top-section p {
+    font-size: 1.2em;
+  }
+
+  .top-section .btn {
+    font-size: 1.2em;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .img-2col-container img {
     width: 80%; /* モバイル端末で画像を小さくするため、幅を80%に設定 */
@@ -146,11 +184,11 @@ p {
   }
 
   .top-section h1 {
-    font-size: 2.8em;
+    font-size: 2.5em;
   }
 
   .top-section p {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 
   .top-section .btn {
@@ -159,32 +197,27 @@ p {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
   .img-2col-container img {
-    width: 48%; /* タブレットサイズでの画像幅を少し小さく */
+    width: 100%;
+    margin: 0 auto;
   }
 
   .nav ul {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .top-section h1 {
-    font-size: 2.8em;
+    font-size: 2.3em;
   }
 
   .top-section p {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
+}
 
-  .top-section .btn {
-    font-size: 1.2em;
-  }
-
-  .img-2col-container {
-    flex-direction: row;
-  }
-
-  .img-2col-container img {
-    width: 48%;
-  }
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
 }
