@@ -123,26 +123,64 @@ p {
   line-height: 1.8;
   color: #212121; /* 黒 */
 }
+//* 画像の基本スタイル */
+img {
+  display: block; /* 画像をブロック要素に設定 */
+  margin: 0 auto; /* 画像を中央に配置 */
+  border-radius: 10px; /* 画像の角を丸く設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ドロップシャドウを設定 */
+}
 
-/* 画像ギャラリー */
+/* 画像の基本スタイル */
+img {
+  display: block; /* 画像をブロック要素に設定 */
+  margin: 0 auto; /* 画像を中央に配置 */
+  border-radius: 10px; /* 画像の角を丸く設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ドロップシャドウを設定 */
+}
+
+/* 画像を横並びに配置するコンテナ */
 .img-2col-container {
   display: flex;
-  gap: 25px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 20px; /* 画像間の隙間 */
+  margin: 20px 0;
+  min-height: 400px; /* コンテナの最小高さ */
+}
+/* 縦並びにするコンテナ */
+.img-column-container {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  align-items: center; /* 画像を水平方向に中央揃え */
+  gap: 20px; /* 画像間の隙間 */
+  margin: 20px 0; /* 上下にマージンを追加 */
 }
 
+/* 画像の基本スタイル */
+.img-column-container img {
+  display: block; /* 画像をブロック要素に設定 */
+  margin: 0 auto; /* 画像を中央に配置 */
+  width: 100%; /* 画像の幅を親要素に合わせる */
+  height: 400px; /* 画像の高さを固定 */
+  object-fit: cover; /* アスペクト比を維持しつつ、指定サイズに収める */
+  border-radius: 10px; /* 画像の角を丸く設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ドロップシャドウを設定 */
+}
+
+/* 各画像の配置 */
+.img-2col-container > div {
+  flex: 1; /* 各画像を均等に配置 */
+  display: flex; /* Flexboxを使用して画像を中央配置 */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center; /* 水平方向の中央揃え */
+}
+
+/* 画像のサイズ指定 */
 .img-2col-container img {
-  width: 48%;
-  height: auto;
-  border-radius: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.25), -10px -10px 25px rgba(255, 255, 255, 0.7); /* 深い影 */
-}
-
-.img-2col-container img:hover {
-  transform: scale(1.05);
-  box-shadow: 12px 12px 35px rgba(0, 0, 0, 0.3), -12px -12px 35px rgba(255, 255, 255, 0.8); /* ホバー時の深い影 */
+  width: 100%; /* 画像の幅を親要素に合わせる */
+  height: 400px; /* 画像の高さを変更（400pxに設定） */
+  object-fit: cover; /* アスペクト比を維持しつつ指定サイズに収める */
+  border-radius: 10px; /* 画像の角を丸く設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ドロップシャドウを設定 */
 }
 
 /* レスポンシブ対応 */
